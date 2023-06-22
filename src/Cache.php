@@ -82,7 +82,7 @@ class Cache
 
         foreach ($fileList as $item) {
             $content = json_decode(file_get_contents($this->wordsPath . $item), true);
-            $handlers[$item] = $content['handlers'];
+            $handlers[$item] = $content['handlers'] ?? [];
         }
 
         $this->content = $handlers;
